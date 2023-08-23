@@ -107,7 +107,8 @@ class AlternatingCatch(base.Environment):
                rows=_ROWS,
                columns=_COLUMNS,
                spawn_probability=_SPAWN_PROBABILITY,
-               seed=None):
+               seed=None,
+               switch_sides = _SWITCH_SIDES):
     """Initializes a continuing Catch environment.
 
     Args:
@@ -120,6 +121,7 @@ class AlternatingCatch(base.Environment):
     self._params = Params(
         rows=rows, columns=columns, spawn_probability=spawn_probability)
     self._state = None
+    self._switch_sides = switch_sides
     #change
     self.side_counter = 0
     self.indicated_low = 0
@@ -194,7 +196,7 @@ class AlternatingCatch(base.Environment):
          # change
         # # count when to change
         self.side_counter += 1
-        if self.side_counter >= _SWITCH_SIDES:
+        if self.side_counter >= self._switch_sides:
             self.side_counter = 0
             if self.indicated_low == 0 and self.indicated_high == self._params.columns / 2 - 1:
                 self.indicated_low = self._params.columns / 2
