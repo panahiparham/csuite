@@ -201,14 +201,14 @@ class AlternatingCatch(base.Environment):
             if self.indicated_low == 0 and self.indicated_high == self._params.columns / 2 - 1:
                 self.indicated_low = self._params.columns / 2
                 self.indicated_high = self._params.columns - 1
-                print("starting the higher part")
+                #print("starting the higher part")
             elif self.indicated_low == self._params.columns / 2 and self.indicated_high == self._params.columns -1:
                 self.indicated_low = 0
                 self.indicated_high = self._params.columns / 2 -1 
-                print("starting the lower part")
+                #print("starting the lower part")
         self._state.balls.append(
                 (self._state.rng.integers(endpoint=True, low=self.indicated_low, high=self.indicated_high), 0))
-        print((self._state.rng.integers(endpoint=True, low=self.indicated_low, high=self.indicated_high), 0))
+        #print((self._state.rng.integers(endpoint=True, low=self.indicated_low, high=self.indicated_high), 0))
         ####################################################################
 
 
