@@ -38,7 +38,7 @@ _INVALID_BALLS_RANGE = (
 
 # Default environment variables.
 _ROWS = 10
-_COLUMNS = 5
+_COLUMNS = 8
 _SPAWN_PROBABILITY = 0.1
 _SWAP_EVERY = 10000
 
